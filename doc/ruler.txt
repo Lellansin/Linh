@@ -1,0 +1,68 @@
+
+
+
+sentence ;
+formula  ()
+
+
+sentence
+-----------------------------------
+
+what is sentence?
+
+sentence is come from
+
+[[[Attribute]] Subject] <[Attribute] verb> <[Attribute] noun [Adverbial]>
+
+example
+
+a is [3,4,5,8,12]
+sort a
+
+this sentence will call function sort to deal with the list.
+
+a is [3,4,5,8,12]
+print (max of a add min of a)
+
+it will call the function max of list if there is no max of list, it will call scope max.
+
+
+property max of list
+-----------------------
+	max is 0
+	for (var item in list)	
+		if item > max
+			max is item
+	return max
+
+property max, min of list
+-----------------------
+	max is 0
+	min is 100
+	for (var item in list)	
+		if item > max
+			max is item
+		if item < min
+			min is item
+	return (max , min)
+
+
+
+
+
+function sort with list
+-----------------------
+	* access
+	--------
+		if (函数名.access == 访问.access)
+			...
+		return;
+	* run
+	--------
+		for (var item in list) 
+			...
+
+		return
+
+
+

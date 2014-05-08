@@ -1,0 +1,16 @@
+Operators
+
++
+-
+*
+/
+%
+
+>   gt
+<   lt
+>=  ge
+<=  le
+
+&&  x and y is true
+||  x or y is true
+!   not x

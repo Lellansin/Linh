@@ -1,0 +1,65 @@
+var define
+
+
+int a;
+create a from int.
+
+a = 5;
+assign a is 5.
+
+int a = 5;
+create a from int with value 5
+
+int i = 10, j = 8;
+create i = 10, j = 8 from int
+
+
+var a is 5, b is 8
+
+
+create a from int with value 5
+set a quals 5
+
+
+int is a class, and it has a event name create, and assign. 
+
+it will create the var by the type of Assignment you give.
+
+
+
+
+
+
+
+
+
+
+var
+  access
+    权限只是事件的一个触发检查函数
+      继承
+      重写
+      调用
+      复写
+      访问，属性，属性函数调用权限
+      调用，方法
+  event
+    初始化
+    更新
+    销毁
+    继承
+  type
+    int
+    float
+    string
+    array
+    object
+    function
+  place
+    地址
+    作用域
+  size
+    空间大小 sizeof
+  随机列表
+
+  __defined__ true, false

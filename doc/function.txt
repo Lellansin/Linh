@@ -1,0 +1,62 @@
+function.txt
+
+
+you can pass less, but not more param to the function.
+
+but the ... is allow to pass more param
+
+
+function bigger with a, b
+----------------------------
+	if a > b
+		return a
+	else 
+		return b
+
+
+
+
+---------------------------- 
+* function max
+----------------------------
+* param 
+	a,
+	b = 10,
+	c = 0
+* access is level 0
+* return type is int
+----------------------------
+	answer is 0
+	for (var item in param)	
+		if item > answer
+			answer is item
+	return answer
+
+
+max(1,2,3)
+
+
+赋值从左往右, 比较从右往左
+
+
+
+function sort with list
+-----------------------
+	* param 
+	--------
+		param int age
+		param object obj
+		param function cb
+
+		if age > 100 or age < 0
+			throw error('wrong age')
+	* access
+	--------
+		if (函数名.access == 访问.access)
+			...
+		return;
+	* run
+	--------
+		for (var item in list) 
+			...
+		return

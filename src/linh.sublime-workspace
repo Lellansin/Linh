@@ -1,0 +1,987 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"op",
+				"operator_t"
+			],
+			[
+				"ar",
+				"argv"
+			],
+			[
+				"che",
+				"check_identifier"
+			],
+			[
+				"arg",
+				"argc"
+			],
+			[
+				"ti",
+				"twiceCall"
+			],
+			[
+				"_get",
+				"_getCallLine"
+			],
+			[
+				"get",
+				"getStack"
+			],
+			[
+				"__",
+				"__src__"
+			],
+			[
+				"file",
+				"filenames"
+			],
+			[
+				"def",
+				"defs	Method"
+			],
+			[
+				"Q",
+				"QTEXT"
+			],
+			[
+				"to",
+				"toUtf8"
+			],
+			[
+				"u",
+				"utf-8"
+			],
+			[
+				"Ema",
+				"EmailDialog"
+			],
+			[
+				"att",
+				"attach"
+			],
+			[
+				"tr",
+				"try	Try/Except"
+			],
+			[
+				"ty",
+				"try	Try/Except"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "operate.c",
+			"settings":
+			{
+				"buffer_size": 1107,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "var.c",
+			"settings":
+			{
+				"buffer_size": 3771,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "expression.h",
+			"settings":
+			{
+				"buffer_size": 111,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "var.h",
+			"settings":
+			{
+				"buffer_size": 1064,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "linh.c",
+			"settings":
+			{
+				"buffer_size": 3831,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "expression.c",
+			"settings":
+			{
+				"buffer_size": 417,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "operate.h",
+			"settings":
+			{
+				"buffer_size": 462,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "Packages/User/node.js.sublime-build",
+	"command_palette":
+	{
+		"height": 196.0,
+		"selected_items":
+		[
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"set c",
+				"Set Syntax: C"
+			],
+			[
+				"js",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"set c++",
+				"Set Syntax: C++"
+			],
+			[
+				"set ",
+				"Set Syntax: Textile"
+			],
+			[
+				"Package Control: install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 289.0,
+		"history":
+		[
+			"view.run_command(\"jshint\")",
+			"view.run_command('example');",
+			"import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/G/Linh 2014-01-21/Linh/src/expression.h",
+		"/G/Linh 2014-01-21/Linh/src/operate.c",
+		"/G/Linh 2014-01-21/Linh/src/var.c",
+		"/G/Linh 2014-01-21/Linh/src/value.h",
+		"/G/Linh 2014-01-21/Linh/src/expression.c",
+		"/G/Linh 2014-01-21/Linh/src/error.h",
+		"/G/Linh 2014-01-21/Linh/src/var.h",
+		"/G/Linh 2014-01-21/Linh/src/linh.h",
+		"/G/Linh 2014-01-21/Linh/src/makefile",
+		"/G/Linh 2014-01-21/Linh/src/todolist.md",
+		"/G/Linh 2014-01-21/Linh/src/operate.h",
+		"/E/Linh 2014-01-21/Linh/src/makefile",
+		"/E/Linh 2014-01-21/Linh/src/linh.c",
+		"/D/test.html",
+		"/D/gcc/code/argv.c",
+		"/E/Files/Downloads/Documents/New Text Document.txt",
+		"/E/GHO/Readme.txt",
+		"/F/node/node_modules/log-switch/logSwitch.js",
+		"/F/node/log-switch/track-test.js",
+		"/F/node/log-switch/funs.js",
+		"/F/node/node_modules/log-switch/package.json",
+		"/F/node/log-switch/test.js",
+		"/F/node/log-switch/t.js",
+		"/F/node/log-switch/logSwitch.js",
+		"/C/Users/Lellansin/Documents/GitHub/logSwitch/README.md",
+		"/F/node/node_modules/log-switch/README.md",
+		"/F/node/log-switch/log-switch.js",
+		"/F/openwrt/12-14/ps.txt",
+		"/F/python/AutoEmail/12.1/zip.py",
+		"/F/python/AutoEmail/12.1/test.py",
+		"/F/python/AutoEmail/dir/Hbox.txt",
+		"/F/python/AutoEmail/test.py",
+		"/F/python/AutoEmail/zip.py",
+		"/C/Python27/Lib/email/quoprimime.py",
+		"/C/Python27/Lib/email/header.py",
+		"/F/python/AutoEmail/dir/grid.txt",
+		"/F/python/AutoEmail/dir/lineEdit.txt",
+		"/F/python/AutoEmail/dir/QString.txt",
+		"/F/python/AutoEmail/dir/QMainwindow.txt",
+		"/D/java web/java web/《数据库应用》课程设计人事管理系统(java源代码).txt",
+		"/C/Users/Lellansin/Documents/GitHub/logSwitch/test.js",
+		"/F/node/node_modules/log-switch/test.js",
+		"/F/python/AutoEmail/smtp.py",
+		"/F/python/AutoEmail/input.py",
+		"/F/python/AutoEmail/popup.py",
+		"/C/Users/Lellansin/AppData/Local/Temp/HZ$D.963.4033/HZ$D.963.4034/main.py",
+		"/C/Python27/Lib/site-packages/PyQt4/__init__.py",
+		"/F/python/AutoEmail/dir/lineEdit",
+		"/F/python/AutoEmail/archive.zip",
+		"/C/Users/Lellansin/AppData/Roaming/Sublime Text 2/Packages/User/hello.sublime-snippet",
+		"/C/Users/Lellansin/AppData/Roaming/Sublime Text 2/Packages/TypePractice/TypePractice.py",
+		"/C/Users/Lellansin/Downloads/Compressed/d3dx9_35/download.pchome.net.txt",
+		"/F/Workspace/C/PipeCMD3/PipeCMD3/pipe.cpp",
+		"/F/Workspace/C/TCP_Socket_Client/TCP_SCOKET_CLIENT_TEST/client.c",
+		"/C/1.txt",
+		"/F/Workspace/C/Pipe5/Debug/test.txt",
+		"/C/Users/Lellansin/AppData/Local/Temp/HZ$D.788.3254/HZ$D.788.3255/TCP_SOCKET_SERVER_TEST/TCP_SOCKET_SERVER_TEST/server.c",
+		"/C/Users/Lellansin/AppData/Roaming/Sublime Text 2/Packages/LsAssistant/LsAssistant.py",
+		"/F/ARM/12507.txt",
+		"/C/Users/Lellansin/AppData/Roaming/Sublime Text 2/Packages/TypePractice/Default (Windows).sublime-keymap",
+		"/C/Users/Lellansin/AppData/Roaming/Sublime Text 2/Packages/MultiFill/Default (Windows).sublime-keymap",
+		"/C/Users/Lellansin/Desktop/pragma 预处理指令简介.js",
+		"/C/Users/Lellansin/Desktop/pragma.html",
+		"/C/Users/Lellansin/Desktop/pragma 预处理指令简介.txt",
+		"/D/Syc/我的微盘/Linh/Linh.txt",
+		"/C/Users/Lellansin/Desktop/hello.cpp",
+		"/G/Snake.cpp",
+		"/F/Workspace/type/打字游戏/readme.txt",
+		"/C/Users/Lellansin/AppData/Roaming/Sublime Text 2/Packages/Default/detect_indentation.py",
+		"/C/Users/Lellansin/AppData/Roaming/Sublime Text 2/Packages/Default/Default (Windows).sublime-keymap",
+		"/C/Users/Lellansin/AppData/Roaming/Sublime Text 2/Packages/MultiFill/MultiFill.py",
+		"/C/Users/Lellansin/AppData/Roaming/Sublime Text 2/Packages/Default/Add Line Before.sublime-macro",
+		"/C/Users/Lellansin/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/Lellansin/Desktop/达内C%2B%2B培训115网盘+%282%29.txt",
+		"/D/gcc/MinGW/open_distro_window.bat",
+		"/C/Users/Lellansin/AppData/Roaming/Sublime Text 2/Packages/LsAssistant/LsAssistant.sublime-settings",
+		"/D/gcc/code/byte.c",
+		"/D/gcc/code/hello.s",
+		"/D/gcc/code/help.txt",
+		"/C/Users/Lellansin/hi.c",
+		"/C/Users/Lellansin/AppData/Roaming/Sublime Text 2/Packages/LsAssistant/README.md",
+		"/D/gcc/code/test.bat",
+		"/C/Users/Lellansin/AppData/Roaming/Sublime Text 2/Packages/LsAssistant/readme.md",
+		"/C/Users/Lellansin/AppData/Roaming/Sublime Text 2/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/Lellansin/AppData/Roaming/Sublime Text 2/Packages/LsAssistant/Main.sublime-menu",
+		"/C/Users/Lellansin/AppData/Roaming/Sublime Text 2/Packages/LsAssistant/Default (Linux).sublime-keymap",
+		"/C/Users/Lellansin/AppData/Roaming/Sublime Text 2/Packages/LsAssistant/Default (OSX).sublime-keymap",
+		"/C/Users/Lellansin/AppData/Roaming/Sublime Text 2/Packages/LsAssistant/Default (Windows).sublime-keymap",
+		"/D/gcc/code/hello.c"
+	],
+	"find":
+	{
+		"height": 39.0
+	},
+	"find_in_files":
+	{
+		"height": 96.0,
+		"where_history":
+		[
+			"",
+			"F:\\Workspace\\C",
+			"../"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"list",
+			"operator_list",
+			"list",
+			"value.val.",
+			"value.val",
+			".val.",
+			"val",
+			"%%",
+			"e.op.content[0]",
+			"GetDlgItem(hDialogHwnd,IDC_CONSOLE)",
+			"清空",
+			"line",
+			"Underline",
+			"Background",
+			"CHARFORMAT2",
+			"EM_EXSETSEL",
+			"EM_LINEINDEX",
+			"获取某一行的起始位置",
+			"EM_LINEINDEX",
+			"GetDlgItem(hDialogHwnd,IDC_CONSOLE)",
+			"GetDlgItem",
+			"获取当前行的最后一个的位置",
+			"SendMessage",
+			"EM_EXSETSEL",
+			"是重点位置",
+			"h1",
+			"msg",
+			"NULL",
+			"EM_SETCHARFORMAT",
+			"设置文本格式",
+			"li",
+			"EM_SETCHARFORMAT",
+			"__value",
+			"struct",
+			"(*t)->type = ",
+			"result",
+			"new_var",
+			"result",
+			"result.value",
+			"result",
+			"T_FLOAT",
+			"*t->",
+			"tmp",
+			"break;",
+			"\n		break;",
+			"argv[i]",
+			"_int",
+			"tmp",
+			"DEBUG",
+			"int",
+			"plus",
+			"size",
+			"len",
+			"list",
+			"modulo",
+			"divide",
+			"modulo",
+			"divideProc",
+			"moduloProc",
+			"ModuloProc",
+			"plus",
+			"divide",
+			"plus",
+			"plusProc",
+			"divideProc",
+			"_operate_h_",
+			"operate_h",
+			"expression",
+			"ifndef",
+			"_expression_H_",
+			"expression_H",
+			"Proc",
+			"plusProc",
+			"minusProc",
+			"plus",
+			"\"+\");",
+			"var_",
+			"ifndef",
+			"_var_h_",
+			"var_h",
+			"op_num",
+			"type_is_constant_var",
+			"type_is_Constant_var",
+			"type_is_var",
+			"是变量",
+			"type_is_var",
+			"_value",
+			"<div id=\"code",
+			"code",
+			"display",
+			"onclick",
+			"parseCommond",
+			"ReadFile",
+			"的文件操作感觉有点怪怪，ReadFile",
+			"WriteFile",
+			"我",
+			"hi",
+			"count",
+			"cmd",
+			"ef",
+			"NEW_LINE",
+			"end",
+			"END",
+			"end",
+			"END",
+			"end",
+			"cmd",
+			"start",
+			"cmd",
+			"'\\0'",
+			"END",
+			"' '",
+			"SPACE",
+			"c",
+			"tmp",
+			"param",
+			"printf",
+			"cmd",
+			"count);",
+			";",
+			"statuses",
+			"infrastructure",
+			"introducing",
+			"MONITORING",
+			"fashion",
+			"__console_log",
+			"disable",
+			"track-test"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "operate.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1107,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								196,
+								196
+							]
+						],
+						"settings":
+						{
+							"history_list_is_closing": true,
+							"syntax": "Packages/C++/C.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "var.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3771,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								350,
+								350
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "expression.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 111,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"history_list_is_closing": true,
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "var.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1064,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								391,
+								391
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 4,
+					"file": "linh.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3831,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "expression.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 417,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								417,
+								417
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "operate.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 462,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								256,
+								269
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 49.0
+	},
+	"input":
+	{
+		"height": 49.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 370.0
+	},
+	"output.find_results":
+	{
+		"height": 578.0
+	},
+	"project": "linh.sublime-project",
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"ex",
+				"expression.c"
+			],
+			[
+				"opre",
+				"operate.h"
+			],
+			[
+				"var.h",
+				"var.h"
+			],
+			[
+				"expre",
+				"expression.h"
+			],
+			[
+				"linh.c",
+				"linh.c"
+			],
+			[
+				"op",
+				"G:\\Linh 2014-01-21\\Linh\\src\\operate.h"
+			],
+			[
+				"linhc.",
+				"G:\\Linh 2014-01-21\\Linh\\src\\linh.c"
+			],
+			[
+				"ope",
+				"G:\\Linh 2014-01-21\\Linh\\src\\operate.c"
+			],
+			[
+				"operate.c",
+				"src/operate.c"
+			],
+			[
+				"var.c",
+				"src/var.c"
+			],
+			[
+				"makefile",
+				"src/makefile"
+			],
+			[
+				"expression.h",
+				"src/expression.h"
+			],
+			[
+				"opreate.h",
+				"src/opreate.h"
+			],
+			[
+				"opreate.c",
+				"src/opreate.c"
+			],
+			[
+				"makefi",
+				"src/makefile"
+			],
+			[
+				"linh.h",
+				"src/linh.h"
+			],
+			[
+				"test",
+				"test-disable.js"
+			],
+			[
+				"log",
+				"logSwitch.js"
+			],
+			[
+				"lo",
+				"logSwitch.js"
+			],
+			[
+				"gi",
+				"dir/grid.txt"
+			],
+			[
+				"mai",
+				"main.py"
+			],
+			[
+				"window",
+				"Default (Windows).sublime-keymap"
+			],
+			[
+				"mul",
+				"MultiFill.py"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 58.0,
+		"selected_items":
+		[
+			[
+				"cJSON_New_Item",
+				"cJSON_New_Item"
+			],
+			[
+				"cJSON_CreateArray",
+				"cJSON_CreateArray"
+			],
+			[
+				"__init__",
+				"__init__"
+			],
+			[
+				"createMainCopyFight",
+				"createMainCopyFight"
+			],
+			[
+				"runAllAction",
+				"runAllAction"
+			],
+			[
+				"createmovebattletohand",
+				"createMoveBattleToHand"
+			],
+			[
+				"filterTarget",
+				"filterTarget"
+			],
+			[
+				"addRepeatBuf",
+				"addRepeatBuf"
+			],
+			[
+				"getFightCardList",
+				"getFightCardList"
+			],
+			[
+				"getTargetList",
+				"getTargetCardList"
+			],
+			[
+				"addDamage",
+				"addDamage"
+			],
+			[
+				"getAttackTargetCard",
+				"getAttackTargetCard"
+			],
+			[
+				"createCardDefChange",
+				"createCardDefChange"
+			],
+			[
+				"hasHaloByFromId",
+				"hasHaloByFromId"
+			],
+			[
+				"clearHpMaxCurrentAttack",
+				"clearHpMaxCurrentAttack"
+			],
+			[
+				"isHpFull",
+				"isHpFull"
+			],
+			[
+				"addAtkCurrentAttack",
+				"addAtkCurrentAttack"
+			],
+			[
+				"addHp",
+				"addHp"
+			],
+			[
+				"getCardById",
+				"getCardById"
+			],
+			[
+				"getFightCardByCardId",
+				"getFightCardByCardId"
+			],
+			[
+				"addForeverBuf",
+				"addForeverBuf"
+			],
+			[
+				"createAddEnemyCardBuf",
+				"createAddEnemyCardBuf"
+			],
+			[
+				"init",
+				"init"
+			],
+			[
+				"console",
+				"Console"
+			],
+			[
+				"log",
+				"log"
+			],
+			[
+				"console.log",
+				"should replace console.log methods with log4js ones"
+			],
+			[
+				"getCurrentGroupRunes",
+				"getCurrentGroupRunes"
+			],
+			[
+				"startcopyfight",
+				"startCopyFight"
+			],
+			[
+				"getonebout",
+				"getOneBoutBufList"
+			],
+			[
+				"getRoleType",
+				"getRoleType"
+			],
+			[
+				"oneBoutBu",
+				"getOneBoutBuf"
+			],
+			[
+				"pvp",
+				"PvpDao"
+			],
+			[
+				"",
+				"$emit"
+			]
+		],
+		"width": 392.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 176.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

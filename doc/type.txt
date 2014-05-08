@@ -1,0 +1,16 @@
+type.txt
+
+
+
+type.create
+
+
+event create of int
+------------------------
+	int i
+
+
+type.check
+-------------------------
+	if the var has defined
+	let's check the type

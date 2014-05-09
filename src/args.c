@@ -7,7 +7,7 @@ static void help();
 static char **copy_argv(int argc, char const *argv[]);
 
 /**
- * check arguments
+ * 检查参数
  */
 int linh_args_check(int argc, char const *argv[])
 {
@@ -39,6 +39,9 @@ int linh_args_files(int argc, char const *argv[])
     }
 }
 
+/**
+ * 备份 argc
+ */
 static char **copy_argv(int argc, char const *argv[])
 {
     int i;
@@ -74,6 +77,9 @@ static char **copy_argv(int argc, char const *argv[])
     return argv_copy;
 }
 
+/**
+ * help
+ */
 static void help()
 {
     printf("No input file.\n");

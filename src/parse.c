@@ -5,7 +5,10 @@
 #include "var.h"
 #include "expression.h"
 
-void calculate(int argc, char **argv)
+/**
+ * 运行语句
+ */
+void eval(int argc, char **argv)
 {
     expression_t total = {0};
     var *tmp;
@@ -69,6 +72,9 @@ void calculate(int argc, char **argv)
     run_expression(total);
 }
 
+/**
+ * 解析暂停标志
+ */
 int parse_stop_check(int ch)
 {
     if (ch == ' ')
@@ -82,6 +88,9 @@ int parse_stop_check(int ch)
     return ispunct(ch);
 }
 
+/*
+ * 解析一行语句
+ */
 void parse(char *cmd)
 {
     int argc, i;
@@ -134,7 +143,7 @@ void parse(char *cmd)
     }
     argc = count;
 
-    calculate(argc, argv);
+    eval(argc, argv);
 
     for (i = 0; i < argc; ++i)
     {

@@ -3,13 +3,9 @@
 #include <stdlib.h>
 
 #include "args.h"
-// #include "parse.h"
-
-void parse(char *cmd);
+#include "parse.h"
 
 // #define DEBUG
-
-void repl();
 
 int main(int argc, char const *argv[])
 {

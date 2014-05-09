@@ -9,6 +9,9 @@ enum VAR_TYPE {V_INTEGER, V_STRING, V_FLOAT, V_FUNCTION};
 struct _operator_t;
 struct _expression_t;
 
+/**
+ * 泛型 值 （内置）
+ */
 typedef union
 {
     int _int;
@@ -17,18 +20,27 @@ typedef union
     struct _expression_t *_exp;
 } __value__;
 
+/**
+ * 普通的值
+ */
 typedef struct
 {
     __value__ val;
     int type;
 } value_t;
 
+/**
+ * 键值对
+ */
 typedef struct
 {
     char name[128];
     value_t value;
 } var;
 
+/**
+ * 操作符
+ */
 typedef struct _operator_t
 {
     char name[10];
@@ -36,6 +48,9 @@ typedef struct _operator_t
     var (*func)(int argc, var *argv);
 } operator_t; 
 
+/**
+ * 表达式
+ */
 typedef struct _expression_t
 {
     char name[10];

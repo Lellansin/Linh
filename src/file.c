@@ -7,6 +7,12 @@
 #include "str.h"
 #include "error.h"
 
+/**
+ * 根据路径的 basename 获取名称
+ * 
+ * 例：D:\Test\app.exe
+ * 返回 app
+ */
 char *getFilename(char *filename_in, char *origin, char *suffix )
 {
     char *p = filename_in;

@@ -4,7 +4,7 @@
 
 enum TYPE {T_INTEGER, T_STRING, T_FLOAT, T_IDENTIFIER, T_PUNCTUATION, T_ERROR};
 
-enum VAR_TYPE {V_INTEGER, V_STRING, V_FLOAT, V_FUNCTION};
+enum VAR_TYPE {V_UNDEFINED, V_INTEGER, V_STRING, V_FLOAT, V_FUNCTION};
 
 struct _operator_t;
 struct _expression_t;
@@ -46,21 +46,23 @@ typedef struct _operator_t
     char name[10];
     char content[10];
     var (*func)(int argc, var *argv);
-} operator_t; 
+} operator_t;
 
 /**
  * 表达式
  */
 typedef struct _expression_t
 {
-    char name[10];
-    var list[10];
-    int num; // 操作符目数 
-    operator_t op;
+    char name[10]; // 表达式名称
+    var list[10];  // 表达参数列表(从1开始，0为上一次表达式的结果)
+    var result;    // 表达式的结果
+    int num;       // 操作符目数(从1开始计数)
+    operator_t op; // 表达式操作符
+    struct _expression_t *next;
 } expression_t;
 
 
-var * var_new();
+var *var_new();
 void var_print(var t);
 enum TYPE check_identifier(char *param);
 int type_is_constant_var(char *param);

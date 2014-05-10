@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <ctype.h>
 #include <string.h>
 #include <malloc.h>
 
@@ -8,7 +9,7 @@
 /**
  * 调试输出机械出来的参数
  */
-static debug_params(int argc, char **argv)
+static void debug_params(int argc, char **argv)
 {
     int i = 0;
     for (; i < argc; ++i)
@@ -37,18 +38,31 @@ static debug_params(int argc, char **argv)
     }
 }
 
+typedef struct 
+{
+    int has_op;
+    int param_num;
+    int op_num;
+} _operator_flag;
+
 /**
  * 运行语句
  */
 void eval(int argc, char **argv)
 {
-    expression_t total = {0};
+    expression_t head = {0};
+    expression_t *current = &head;
+    var Undefined = {0};
     var *tmp;
+    var result;
     int i;
 
 #ifdef DEBUG
     debug_params(argc, argv);
 #endif
+
+    // Todo::根据 op_flag 来判断 op exp 是否已经添加满
+    // Todo::满了则 new exp 继续
 
     for (i = 0; i < argc; ++i)
     {
@@ -67,18 +81,25 @@ void eval(int argc, char **argv)
         */
         if (type_is_constant_var(argv[i]))
         {
-            printf("param: %d -> [%s] constant\n", i, argv[i]);
             get_var_from_str(&tmp, argv[i]);
-            total.list[total.num++] = *tmp;
+            if (!current->num)
+            {
+                current->list[0] = Undefined;
+            }
+            current->num++;
+            current->list[current->num] = *tmp;
         }
         else
         {
-            strcpy(total.op.content, argv[i]);
+            printf("dispath param %s\n", argv[i]);
+            strcpy(current->op.content, argv[i]);
             printf("param: %d -> [%s]\n", i, argv[i]);
         }
     }
 
-    run_expression(total);
+    result = run_expression(&head);
+    printf("exp result:\n");
+    var_print(result);
 }
 
 /**

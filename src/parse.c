@@ -6,16 +6,12 @@
 #include "expression.h"
 
 /**
- * 运行语句
+ * 调试输出机械出来的参数
  */
-void eval(int argc, char **argv)
+static debug_params(int argc, char **argv)
 {
-    expression_t total = {0};
-    var *tmp;
-    int i;
-
-#ifdef DEBUG
-    for (i = 0; i < argc; ++i)
+    int i = 0;
+    for (; i < argc; ++i)
     {
         switch (check_identifier(argv[i]))
         {
@@ -39,6 +35,19 @@ void eval(int argc, char **argv)
             break;
         }
     }
+}
+
+/**
+ * 运行语句
+ */
+void eval(int argc, char **argv)
+{
+    expression_t total = {0};
+    var *tmp;
+    int i;
+
+#ifdef DEBUG
+    debug_params(argc, argv);
 #endif
 
     for (i = 0; i < argc; ++i)

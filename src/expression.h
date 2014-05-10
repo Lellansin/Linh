@@ -4,6 +4,6 @@
 #include "var.h"
 
 // 运行表达式
-void run_expression(expression_t e);
+var run_expression(expression_t *exp);
 
 #endif

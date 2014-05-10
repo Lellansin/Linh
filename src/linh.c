@@ -2,6 +2,7 @@
 #include <assert.h>
 #include <stdlib.h>
 
+#include "linh.h"
 #include "args.h"
 #include "parse.h"
 
@@ -37,11 +38,14 @@ void repl()
 
         printf("%s\n", input);
 
+        // Todo::拆分一个命令 run 函数
         if (strcmp(input, "quit") == 0)
         {
             exit(0);
         }
 
+        // 解析
         parse(input);
+        // Todo::将解析出来的表达式放在此处运行
     }
 }

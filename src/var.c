@@ -1,5 +1,7 @@
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
 #include <malloc.h>
 #include <string.h>
 
@@ -155,6 +157,8 @@ int get_var_from_str(var **t, char *str)
         // Todo::错误处理
         break;
     }
+
+    return 0;
 }
 
 int var_get_int(var t)

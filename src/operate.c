@@ -17,9 +17,13 @@ operator_t operator_list[] =
     {"modulo", "\45", moduloProc} // \45 即 %
 };
 
+// Todo:: 读取配置文件来加载
 // Todo:: 添加 operator 配置 init 函数
 // Todo:: 改成操作符 list struct，然后动态添加
 
+/**
+ * 根据字符串获取操作符
+ */
 operator_t getOperatorByString(char *str)
 {
     int i, len = sizeof(operator_list) / sizeof(operator_t);
@@ -35,6 +39,31 @@ operator_t getOperatorByString(char *str)
     printf("Error %d: operator not found\n", ERROR_OPERATOR_NOT_FOUND);
     exit(ERROR_OPERATOR_NOT_FOUND);
 }
+
+/**
+ * 根据操作符获取其目数
+ * 
+ * Unary operator
+ * Binary operator
+ * Ternary operator
+ */
+int getOperatorNumeral(operator_t op)
+{
+
+}
+
+/**
+ * 根据操作符 String 获取其目数
+ * 
+ * Unary operator
+ * Binary operator
+ * Ternary operator
+ */
+int getOperatorNumeralByString(operator_t op)
+{
+    
+}
+
 
 /**
  * 判断

@@ -24,8 +24,6 @@ var run_expression(expression_t *e)
     int  var_num;
     var *var_list;
 
-    // Todo::check operate
-
 loop:
 
     cur_op = getOperatorByString(cur->op.content);

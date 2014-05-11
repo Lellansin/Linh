@@ -4,6 +4,7 @@
 #include <malloc.h>
 
 #include "var.h"
+#include "operate.h"
 #include "expression.h"
 
 /**
@@ -38,10 +39,11 @@ static void debug_params(int argc, char **argv)
     }
 }
 
-typedef struct 
+typedef struct
 {
     int has_op;
     int param_num;
+    int num;
     int op_num;
 } _operator_flag;
 
@@ -51,7 +53,9 @@ typedef struct
 void eval(int argc, char **argv)
 {
     expression_t head = {0};
+    expression_t *exp_tmp;
     expression_t *current = &head;
+    _operator_flag op_flag = {0};
     var Undefined = {0};
     var *tmp;
     var result;
@@ -79,6 +83,19 @@ void eval(int argc, char **argv)
 
             判断当前表达式的二目是直接是当前变量还是新的表达式，就看下一个运算符的优先级是否高于当前运算符
         */
+
+        // 操作符目数凑满, 新建下一个表达式
+        if (op_flag.op_num && op_flag.num == op_flag.op_num)
+        {
+            // printf("op_flag.op_num: %d\n", op_flag.op_num);
+            // printf("op_flag.num: %d\n", op_flag.num);
+            // printf("-->> 操作符已满\n");
+            exp_tmp = (expression_t *)malloc(sizeof(expression_t));
+            current->next = exp_tmp;
+            current = exp_tmp;
+        }
+
+
         if (type_is_constant_var(argv[i]))
         {
             get_var_from_str(&tmp, argv[i]);
@@ -88,12 +105,17 @@ void eval(int argc, char **argv)
             }
             current->num++;
             current->list[current->num] = *tmp;
+
+            op_flag.num++;
         }
-        else
+        else if (!op_flag.has_op)
         {
-            printf("dispath param %s\n", argv[i]);
             strcpy(current->op.content, argv[i]);
             printf("param: %d -> [%s]\n", i, argv[i]);
+
+            op_flag.has_op = 1;
+            printf("argv[i]: %s\n", argv[i]);
+            op_flag.op_num = getOperatorNumeralByString(argv[i]);
         }
     }
 

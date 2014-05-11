@@ -15,3 +15,5 @@
 解析完一个 exp 则压入栈中
 
 依次出栈运算
+
+todo, error stack...

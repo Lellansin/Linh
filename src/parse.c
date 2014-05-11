@@ -56,7 +56,7 @@ void eval(int argc, char **argv)
     expression_t *exp_tmp;
     expression_t *current = &head;
     _operator_flag op_flag = {0};
-    var Undefined = {0};
+    var Undefined = {0}; // Todo:: 将 undefined 加到头文件中
     var *tmp;
     var result;
     int i;
@@ -87,10 +87,11 @@ void eval(int argc, char **argv)
         // 操作符目数凑满, 新建下一个表达式
         if (op_flag.op_num && op_flag.num == op_flag.op_num)
         {
-            // printf("op_flag.op_num: %d\n", op_flag.op_num);
-            // printf("op_flag.num: %d\n", op_flag.num);
-            // printf("-->> 操作符已满\n");
+            printf("表达式已满，新建表达式\n");
+            memset(&op_flag, 0, sizeof(_operator_flag));
+            
             exp_tmp = (expression_t *)malloc(sizeof(expression_t));
+            memset(exp_tmp, 0, sizeof(expression_t));
             current->next = exp_tmp;
             current = exp_tmp;
         }
@@ -98,6 +99,7 @@ void eval(int argc, char **argv)
 
         if (type_is_constant_var(argv[i]))
         {
+            printf("记录常量\n");
             get_var_from_str(&tmp, argv[i]);
             if (!current->num)
             {
@@ -110,11 +112,11 @@ void eval(int argc, char **argv)
         }
         else if (!op_flag.has_op)
         {
+            printf("记录操作符\n");
             strcpy(current->op.content, argv[i]);
             printf("param: %d -> [%s]\n", i, argv[i]);
 
             op_flag.has_op = 1;
-            printf("argv[i]: %s\n", argv[i]);
             op_flag.op_num = getOperatorNumeralByString(argv[i]);
         }
     }

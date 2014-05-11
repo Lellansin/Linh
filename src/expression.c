@@ -25,7 +25,8 @@ var run_expression(expression_t *e)
     var *var_list;
 
 loop:
-
+    
+    printf("run_expression: [%s]\n", cur->op.content);
     cur_op = getOperatorByString(cur->op.content);
 
     var_num = cur->num;
@@ -48,6 +49,7 @@ loop:
     // 调用下一层表达式
     if (cur->next)
     {
+        printf("call next floor\n");
         param = &cur->result;
         cur = cur->next;
         goto loop;

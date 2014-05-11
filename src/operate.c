@@ -1,5 +1,6 @@
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <assert.h>
 
 #include "error.h"
@@ -10,11 +11,11 @@
  */
 operator_t operator_list[] =
 {
-    {"plus", "+", plusProc},
-    {"minus", "-", minusProc},
-    {"multiply", "*", multiplyProc},
-    {"divide", "/", divideProc},
-    {"modulo", "\45", moduloProc} // \45 即 %
+    {"plus", "+", plusProc, 2},
+    {"minus", "-", minusProc, 2},
+    {"multiply", "*", multiplyProc, 2},
+    {"divide", "/", divideProc, 2},
+    {"modulo", "\45", moduloProc, 2} // \45 即 %
 };
 
 // Todo:: 读取配置文件来加载
@@ -26,6 +27,7 @@ operator_t operator_list[] =
  */
 operator_t getOperatorByString(char *str)
 {
+    printf("getOperatorByString: str: %s\n", str);
     int i, len = sizeof(operator_list) / sizeof(operator_t);
     for (i = 0; i < len; ++i)
     {
@@ -36,7 +38,7 @@ operator_t getOperatorByString(char *str)
     }
 
     // Todo::add to error.h
-    printf("Error %d: operator not found\n", ERROR_OPERATOR_NOT_FOUND);
+    printf("Error %d: operator [%s] not found\n", ERROR_OPERATOR_NOT_FOUND, str);
     exit(ERROR_OPERATOR_NOT_FOUND);
 }
 
@@ -47,9 +49,9 @@ operator_t getOperatorByString(char *str)
  * Binary operator
  * Ternary operator
  */
-int getOperatorNumeral(operator_t op)
+int getOperatorNumeral(operator_t *op)
 {
-
+    return op->num;
 }
 
 /**
@@ -59,9 +61,11 @@ int getOperatorNumeral(operator_t op)
  * Binary operator
  * Ternary operator
  */
-int getOperatorNumeralByString(operator_t op)
+int getOperatorNumeralByString(char *str)
 {
-    
+    printf("getOperatorNumeralByString str: %s\n", str);
+    operator_t op = getOperatorByString(str);
+    return op.num;
 }
 
 

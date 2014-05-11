@@ -5,6 +5,7 @@
 #include "var.h"
 
 operator_t getOperatorByString(char *str);
+int getOperatorNumeralByString(char *str);
 var plusProc(int argc, var *argv);
 var minusProc(int argc, var *argv);
 var multiplyProc(int argc, var *argv);

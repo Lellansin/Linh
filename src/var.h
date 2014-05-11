@@ -46,6 +46,7 @@ typedef struct _operator_t
     char name[10];
     char content[10];
     var (*func)(int argc, var *argv);
+    int num; // Todo::修改成一个合适的结构
 } operator_t;
 
 /**

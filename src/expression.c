@@ -15,9 +15,10 @@
  */
 var run_expression(expression_t *e)
 {
-    int i = 0, len = sizeof(operator_list) / sizeof(operator_t);
+    int i = 0;
     expression_t *start = e;
     expression_t *cur = e;
+    operator_t cur_op;
 
     var *param = NULL;
     int  var_num;
@@ -27,29 +28,24 @@ var run_expression(expression_t *e)
 
 loop:
 
-    // 计算当前表达式
-    for (i = 0; i < len; ++i)
+    cur_op = getOperatorByString(cur->op.content);
+
+    var_num = cur->num;
+    var_list = (var *)cur->list;
+
+    // 如果有结果的话
+    if (param)
     {
-        if (strcmp(cur->op.content, operator_list[i].content) == 0)
-        {
-            var_num = cur->num;
-            var_list = (var *)cur->list;
-
-            // 如果有结果的话
-            if (param)
-            {
-                cur->list[0] = *param;
-                var_num++;
-            }
-            else
-            {
-                var_list++;
-            }
-
-            cur->result = operator_list[i].func(var_num, var_list);
-            //break;
-        }
+        cur->list[0] = *param;
+        var_num++;
     }
+    else
+    {
+        var_list++;
+    }
+
+    cur->result = cur_op.func(var_num, var_list);
+
 
     // 调用下一层表达式
     if (cur->next)

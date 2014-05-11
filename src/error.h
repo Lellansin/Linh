@@ -7,4 +7,7 @@ if (Expression == Value)                  \
 	printf("Error: %s\n", String);        \
 }                                         \
 
+
+#define ERROR_OPERATOR_NOT_FOUND 100
+
 #endif

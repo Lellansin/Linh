@@ -35,12 +35,20 @@ loop:
     // 如果有结果的话
     if (param)
     {
+        printf("有结果，并且上次结果为");
+        var_print(*param);
         cur->list[0] = *param;
         var_num++;
     }
     else
     {
         var_list++;
+    }
+
+    for (i = 0; i < var_num; ++i)
+    {
+        printf("var_list [%d] ", i);
+        var_print(var_list[i]);
     }
 
     cur->result = cur_op.func(var_num, var_list);

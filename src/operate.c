@@ -83,7 +83,14 @@ var equal(int argc, char **argv)
 var plusProc(int argc, var *argv)
 {
     var result = {"result", {0, 0}};
-    assert(argc == 2);
+    if (argc != 2)
+    {
+        printf("argc: %d\n", argc);
+        printf("argv[0]: %d\n", argv[0]);
+        printf("argv[1]: %d\n", argv[1]);
+        printf("argv[2]: %d\n", argv[2]);
+    }
+    // assert(argc == 2);
     result.value.val._int = argv[0].value.val._int + argv[1].value.val._int;
     return result;
 }

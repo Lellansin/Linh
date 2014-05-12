@@ -87,6 +87,8 @@ void eval(int argc, char **argv)
         // 操作符目数凑满, 新建下一个表达式
         if (op_flag.op_num && op_flag.num == op_flag.op_num)
         {
+            printf("op_flag.num: %d\n", op_flag.num);
+            printf("op_flag.op_num: %d\n", op_flag.op_num);
             printf("表达式已满，新建表达式\n");
             memset(&op_flag, 0, sizeof(_operator_flag));
             
@@ -99,7 +101,7 @@ void eval(int argc, char **argv)
 
         if (type_is_constant_var(argv[i]))
         {
-            printf("记录常量\n");
+            printf("记录常量 [%s]\n", argv[i]);
             get_var_from_str(&tmp, argv[i]);
             if (!current->num)
             {
@@ -118,6 +120,7 @@ void eval(int argc, char **argv)
 
             op_flag.has_op = 1;
             op_flag.op_num = getOperatorNumeralByString(argv[i]);
+            op_flag.num = 1; // 上一个表达式剩下的结果
         }
     }
 

@@ -121,6 +121,22 @@ void eval(int argc, char **argv)
             op_flag.has_op = 1;
             op_flag.op_num = getOperatorNumeralByString(argv[i]);
             op_flag.num = 1; // 上一个表达式剩下的结果
+
+
+            /*
+                todo
+
+                形如 ? : 三目运算符，要有运算符检测栈，或者将其中的所有内容
+                存为一个未解析的 exp，到run 的时候再动态解析
+
+                由于 括号的存在，后者实现更简单，故建议实现后者
+                则，解析参数要单独分离，
+                1+3+5+7+9 分离顺序最佳为：
+                【1】+【3*5+7+9】
+                【1】+【3+[5+[7+9]]】
+
+                继续 todo 判断运算符优先级，并为其加上括号
+            */
         }
     }
 

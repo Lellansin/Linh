@@ -25,6 +25,12 @@ var run_expression(expression_t *e)
     var *var_list;
 
 loop:
+
+    // 如果没有操作符则直接返回本身
+    if (!hasOperate(cur->op.content))
+    {
+        return cur->list[1];
+    }
     
     printf("run_expression: [%s]\n", cur->op.content);
     cur_op = getOperatorByString(cur->op.content);
@@ -64,4 +70,14 @@ loop:
     }
 
     return cur->result;
+}
+
+int hasOperate(char *content) 
+{
+    if (strlen(content) > 0)
+    {
+        return true;
+    } else {
+        return false;
+    }
 }

@@ -2,6 +2,9 @@
 #ifndef _VAR_H_
 #define _VAR_H_
 
+#define true 1
+#define false 0
+
 enum TYPE {T_INTEGER, T_STRING, T_FLOAT, T_IDENTIFIER, T_PUNCTUATION, T_ERROR};
 
 enum VAR_TYPE {V_UNDEFINED, V_INTEGER, V_STRING, V_FLOAT, V_FUNCTION};

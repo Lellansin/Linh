@@ -12,6 +12,7 @@
  */
 void var_print(var t)
 {
+    // todo fix no name problem
     switch (t.value.type)
     {
     case T_INTEGER:

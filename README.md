@@ -1,4 +1,4 @@
 Linh
 ----------------
 
-A language for my girl friend
+A language for my life

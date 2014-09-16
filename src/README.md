@@ -10,3 +10,5 @@ implement no limit plus.
 discus to divide dir
 
 var stack, call stack
+
+实现基础功能(待定), 剩下使用 Linh 自实现

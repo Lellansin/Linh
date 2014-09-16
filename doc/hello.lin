@@ -1,0 +1,16 @@
+say "Hello world"
+
+
+
+
+say (加 1, 2) ; 3
+say (减 1, 2) ; 3
+say (乘 1, 2) ; 3
+say (除 1, 2) ; 3
+say (大于 1, 2) ; false
+say (小于 1, 2) ; true
+say (小于 
+        1,
+        2,
+        3
+    ) ; true  -> 1 < 2 < 3

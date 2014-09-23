@@ -35,4 +35,6 @@ var 模块
     组织成: 函数 (参数列表) 的形式
 
 表达式执行:
-    找到第一个函数, 并将一次传入参数的值(如果参数是一个表达式则先执行)
+    找到第一个函数, XX(并将一次传入参数的值(如果参数是一个表达式则先执行))
+    	and pass the args into the function,
+    	the value of params will be calculate by function

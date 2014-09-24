@@ -1,0 +1,83 @@
+Example 1
+
+(print "hello world")
+
+将字符串
+解析为:
+arg[0] print
+arg[1] "hello world"
+
+函数调用 arg[0] 把后面的参数传入其中
+
+
+Example 2
+
+(if
+  (> 1 2)
+  (print "1 > 2")
+  (print "1 < 2"))
+
+将字符串
+解析为:
+arg[0] print
+arg[1] (> 1 2)
+arg[2] (print "1 > 2")
+arg[3] (print "1 < 2")
+
+函数调用 arg[0] if 把后面的参数传入其中
+if 中
+判断 arg[1] 是否为真, 为证调用 arg[2] 为假调用 arg[3]
+
+
+Example 3
+
+(def i (* 10 10))
+(if
+  (> i 2)
+  (print "i > 2")
+  (print "i < 2"))
+
+将字符串
+解析为:
+arg[0][0] def
+arg[0][1] i
+arg[0][2] (* 10 10)
+
+arg[1][0] print
+arg[1][1] (> i 2)
+arg[1][2] (print "i > 2")
+arg[1][3] (print "i < 2")
+
+
+调用 def, 传入 其后参数, 表达式的值为 def 的返回值
+
+Example 4
+
+(def i 1)
+(loop
+  (< i 10)
+  (print (str "i: " i))
+  (inc i))
+
+将字符串
+解析为:
+arg[0][0] def
+arg[0][1] i
+arg[0][2] (* 10 10)
+
+arg[1][0] print
+arg[1][1] (> i 2)
+arg[1][2] (print "i > 2")
+arg[1][3] (print "i < 2")
+
+
+调用 def, 传入 其后参数, 表达式的值为 def 的返回值
+
+int loop(expresion exp)
+{
+    while( 如果 exp[参数1] 为真 )
+    {
+        for ( 遍历后面的 )
+            exp[参数i].run
+    }
+}

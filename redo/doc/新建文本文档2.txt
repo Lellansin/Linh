@@ -1,0 +1,54 @@
+﻿
+
+lexeme
+
+general 在编程语言中的含义为语言语法的基本单元，在此例中左括号，右括号，逗号，标识符（函数，对象）
+
+special 字符串形式，如"fun" "(" "," 
+
+lexical analysis
+
+将字符串（此语言的实例）流分解，包括 scanning ， tokenizer
+
+scanning
+
+将字符串（此语言的实例）流分割成 lexeme 的模块
+
+tokenizer
+
+将字符串（此语言的实例）流分割打包成 token 的模块 ##tokenizer 可以从 scanning 增加一步，但一般直接实现更有效率
+
+token
+
+一个词语的表示，包含词汇的类型和词汇的值、状态，以<type,attribute>表示
+
+————type
+	token的类型，如id，left_bracket
+————attribute
+	token 的状态，可能是 lexeme ，值 ，或到 symbol table 的 entry
+	
+grammar
+
+语言实例（也就是程序）构成的规则，不定义程序的行为，但是定义了程序的构成方式，比如c语言的if语句
+if(exp)stmt 由（if关键字 左括号 表达式 右括号 语句）构成关于表达式和语句的构成方式又有相应的定义
+
+syntax
+
+语言实例（也就是程序）构成的规则，不定义程序的行为，但是定义了程序的构成方式，包括语法，以及对各个语法成分的其他约束
+
+syntax analysis
+
+以 syntax 为依据，在此例中将 token 流进行分析，进行的分析在理论上可以整理出树状的语法结构，但一般不显式构造
+
+syntax directed translation
+
+以 syntax analysis 指导的翻译，在此例中将 token 流进行分析，因为分析能掌握语法结构的逻辑关系，因此也能得到语义，进行翻译
+举例便于理解，得到了
+			if
+		exp    stmt
+exp和stmt属于同一个if语句，翻译时根据语义翻译为 当exp值为0时跳转到stmt之后，否则继续执行
+
+parser
+
+语法分析器，在此例中，翻译采用 syntax directed translation ， parser 是翻译的驱动和中心
+

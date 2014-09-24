@@ -1,0 +1,27 @@
+﻿解释器是syntax directed translation，以parser为驱动。
+
+parser进行语法分析时读入token流，tokenizer也是管道化的，因此有
+        tokenizer          parser
+
+字符串——————>tokens——————>???
+
+"(fun,x,y)"---><(><id,1><,><id,2><,><id,3><)>--->???
+
+其中parser直接进行翻译，因此parser没有中间表示（比如语法树）产生。
+
+token当是符号，如( ) ,时，没有状态，因此只有一项,表示为<(> <,> <)>。
+而变量名/函数名，在此例中无法由词法分析确定，统称identifyer，表示为<id，entry>
+其中entry为到symbol table的入口，可以实现为指针，句柄，为了封装建议实现为句柄
+def，function等应该实现为被保留（不可用作标识符）的关键字，表示为<def>等
+type可以实现为枚举等。如enum lextype{id,lb,rb,col,def,fun...};
+
+parser/tokenizer 是管道化的，因此不需要把token一次性保存下来
+
+tokenizer需要保留一个字符的输入作为缓存，进行接下来的分析决定，称为peek
+parser需要一个token作为peek
+
+鉴于本例较为简单，tokenizer以硬编码逻辑方式实现，parser采用递归下降（predicative parser）结构
+
+symbol table保存identifyer的相关信息，包括identifyer的名字、类型、值等等，在本例中只有函数的局部作用域，因此为每个函数实例化一个symbol table。
+symbol table应提供快速的插入和查找。tokenizer返回的token只有名字，类型要在翻译时确定，因此symbol table中关于identifyer的相关信息可能在某些时候是不完全的，要由parser在运行过程中补充。
+

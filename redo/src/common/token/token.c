@@ -1,5 +1,13 @@
 
 // 接收 字符串
-// 返回 参数数组 (参数1 是函数名)
 
-int 
+int tokenizer(char *str)
+{
+    INTEGER
+    DECIMAL
+
+    CHAR
+    STRING
+
+    VARIABLE
+}

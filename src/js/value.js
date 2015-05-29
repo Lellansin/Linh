@@ -1,13 +1,12 @@
-var TYPE = {
-	ID: 0,
-	STR: 1,
-	NUM: 2,
-	BOOL: 3,
-	NULL: 4,
-	SYNTAX: 5,
-};
+var TYPE = require('./config/type');
 
 function Value(type, text) {
+	this.init(type, text);
+}
+
+module.exports = Value;
+
+Value.prototype.init = function(type, text) {
 	if (!text) {
 		var value = type;
 		this.type = getType(value);
@@ -32,9 +31,16 @@ function Value(type, text) {
 		default:
 			this.content = text;
 	}
+
 }
 
-module.exports = Value;
+Value.prototype.get = function() {
+	return this.content;
+};
+
+Value.prototype.type = function() {
+	return this.type;
+};
 
 var getType = function(value) {
 	var type = typeof value;
@@ -53,14 +59,6 @@ var getType = function(value) {
 		case 'boolean':
 			return TYPE.BOOL;
 	}
-};
-
-Value.prototype.get = function() {
-	return this.content;
-};
-
-Value.prototype.type = function() {
-	return this.type;
 };
 
 var dealStr = function(str) {

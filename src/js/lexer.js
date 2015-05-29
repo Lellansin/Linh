@@ -1,13 +1,5 @@
 var Value = require('./value');
-
-var TYPE = {
-	ID: 0,
-	STR: 1,
-	NUM: 2,
-	BOOL: 3,
-	NULL: 4,
-	SYNTAX: 5,
-};
+var TYPE = require('./config/type');
 
 exports.parse = function(str) {
 	if (str == '.') {
@@ -42,20 +34,20 @@ exports.parse = function(str) {
 	}
 };
 
-/*
-console.log('parse', exports.parse('$i'));;
-console.log('parse', exports.parse('name'));;
-console.log('parse', exports.parse('"name"'));;
-console.log('parse', exports.parse('"hello world"'));;
-console.log('parse', exports.parse('"hello world \\" "'));;
-console.log('parse', exports.parse('name1'));;
-console.log('parse', exports.parse('name_1'));;
-console.log('parse', exports.parse('_name'));;
-console.log('parse', exports.parse('name-1'));;
-console.log('parse', exports.parse('name-1 '));;
-console.log('parse', exports.parse('name-1?'));;
-console.log('parse', exports.parse('123'));;
-console.log('parse', exports.parse('1'));;
-console.log('parse', exports.parse('12.3'));;
 
-*/
+// console.log('parse', exports.parse('i'));;
+// console.log('parse', exports.parse('$i'));;
+// console.log('parse', exports.parse('name'));;
+// console.log('parse', exports.parse('"name"'));;
+// console.log('parse', exports.parse('"hello world"'));;
+// console.log('parse', exports.parse('"hello world \\" "'));;
+// console.log('parse', exports.parse('name1'));;
+// console.log('parse', exports.parse('name_1'));;
+// console.log('parse', exports.parse('_name'));;
+// console.log('parse', exports.parse('name-1'));;
+// console.log('parse', exports.parse('name-1 '));;
+// console.log('parse', exports.parse('name-1?'));;
+// console.log('parse', exports.parse('123'));;
+// console.log('parse', exports.parse('1'));;
+// console.log('parse', exports.parse('12.3'));;
+

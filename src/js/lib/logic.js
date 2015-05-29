@@ -8,7 +8,7 @@ exports['gt'] = function(params) {
 	return flag;
 };
 
-exports['gte'] = function() {
+exports['gte'] = function(params) {
 	var flag = true;
 	var num = params[0].get();
 	params.slice(1).forEach(function(value) {
@@ -28,7 +28,7 @@ exports['lt'] = function(params) {
 	return flag;
 };
 
-exports['lte'] = function() {
+exports['lte'] = function(params) {
 	var flag = true;
 	var num = params[0].get();
 	params.slice(1).forEach(function(value) {

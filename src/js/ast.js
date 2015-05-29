@@ -1,3 +1,5 @@
+var Expression = require('./expr');
+
 function AST(funcs) {
 	this.funcs = funcs;
 }
@@ -15,10 +17,14 @@ AST.prototype.parse = function(values) {
 };
 
 var parse = function(self, values) {
-	var node = new Tree(values[0]);
+	var node = new Expression(self.funcs, values[0]);
 
 	for (var i = 1; i < values.length; i++) {
 		var item = values[i];
+		if (item.type == 5) {
+			node.len++;
+			break;
+		}
 		if (!isFunc(self, item)) {
 			node.add(item);
 		} else {
@@ -39,23 +45,4 @@ var isFunc = function(self, values) {
 		}
 	}
 	return false;
-};
-
-
-function Tree(func) {
-	this.func = func.content;
-	this.params = [];
-	this.isFunc = true;
-}
-
-Tree.prototype.add = function(value) {
-	this.params.push(value);
-};
-
-Tree.prototype.length = function() {
-	return this.params.length;
-};
-
-Tree.prototype.run = function(funcs) {
-	return funcs.run(this.func, this.params);
 };

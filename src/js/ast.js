@@ -1,7 +1,7 @@
 var Expression = require('./expr');
 
-function AST(funcs) {
-	this.funcs = funcs;
+function AST(context) {
+	this.context = context;
 }
 
 module.exports = AST;
@@ -17,7 +17,7 @@ AST.prototype.parse = function(values) {
 };
 
 var parse = function(self, values) {
-	var node = new Expression(self.funcs, values[0]);
+	var node = new Expression(self.context, values[0]);
 
 	for (var i = 1; i < values.length; i++) {
 		var item = values[i];
@@ -40,7 +40,7 @@ var parse = function(self, values) {
 var isFunc = function(self, values) {
 	if (values.type == 0) {
 		// 是标识符
-		if (self.funcs.have(values.content)) {
+		if (self.context.funcs.have(values.content)) {
 			return true;
 		}
 	}

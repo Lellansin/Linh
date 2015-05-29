@@ -1,19 +1,22 @@
 var util = require('util');
 var scanf = require('scanf');
 var Token = require('./token');
-var Funcs = require('./func');
+var Context = require('./context');
 var AST = require('./ast');
 
-var funcs = new Funcs();
-var AstTree = new AST(funcs);
+var root = {};
+var context = new Context(root);
+var AstTree = new AST(context);
 
 do {
 
-	// process.stdout.write('> ');
-	// var code = scanf('%S');
+	process.stdout.write('> ');
+	var code = scanf('%S');
 	// var code = 'add 5 sub 12 5';
 	// var code = 'sub 12 add 5 6';
-	var code = 'if true echo 123'
+	// var code = 'if true echo 123'
+	// var code = 'if gt 5 12. echo 123'
+	// var code = 'if gt 3 2. echo "hello world,3 > 2" "test"';
 
 	if (code == 'exit') {
 		console.log('bye~');
@@ -22,12 +25,13 @@ do {
 
 	try {
 		var values = Token(code);
-		var ast = AstTree.parse(values);
-		console.log('ast', util.inspect(ast, true, 8));
-		var result = ast.run(funcs);
+		var expression = AstTree.parse(values);
+		// console.log('ast', util.inspect(ast, true, 8));
+		var result = expression.run();
 		console.log(result);
 	} catch (err) {
+		throw err
 		console.error('error:', err.message);
 	}
 
-} while (false);
+} while (true);

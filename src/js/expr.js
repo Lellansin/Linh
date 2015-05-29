@@ -2,8 +2,10 @@
  * 表达式
  */
 
-function Expression(funcs, value) {
-	this.funcs = funcs;
+var TYPE = require('./config/type');
+
+function Expression(context, value) {
+	this.context = context;
 	this.name = value.content;
 	this.params = [];
 	this.isFunc = true;
@@ -16,6 +18,10 @@ module.exports = Expression;
  * 添加参数
  */
 Expression.prototype.add = function(value) {
+	if (value.type == TYPE.ID) {
+		// 从上下文中得到标识符的值
+		value = this.context.get(value.content);
+	}
 	this.params.push(value);
 	this.len++;
 };
@@ -31,7 +37,7 @@ Expression.prototype.length = function() {
  * 执行表达式
  */
 Expression.prototype.run = function() {
-	return this.funcs.run(this.name, this.params);
+	return this.context.run(this.name, this.params);
 };
 
 /*

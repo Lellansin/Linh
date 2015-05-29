@@ -23,9 +23,8 @@ Functions.prototype.load = function() {
 /*
  * 函数注册
  */
-Functions.prototype.register = function(func, code) {
-	// 解析一系列的表达式出来，运行的时候动态填充数据计算。
-	this.list[func] = code;
+Functions.prototype.register = function(name, callback) {
+	this.list[name] = callback;
 };
 
 /*

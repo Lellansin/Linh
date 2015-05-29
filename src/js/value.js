@@ -1,7 +1,10 @@
 var TYPE = {
 	ID: 0,
 	STR: 1,
-	NUM: 2
+	NUM: 2,
+	BOOL: 3,
+	NULL: 4,
+	SYNTAX: 5,
 };
 
 function Value(type, text) {
@@ -20,6 +23,12 @@ function Value(type, text) {
 		case TYPE.NUM:
 			this.content = dealNum(text);
 			break;
+		case TYPE.BOOL:
+			this.content = Boolean(text);
+			break;
+		case TYPE.NULL:
+			this.content = null;
+			break;
 		default:
 			this.content = text;
 	}
@@ -31,11 +40,20 @@ var getType = function(value) {
 	var type = typeof value;
 	switch (type) {
 		case 'string':
+			switch (value) {
+				case 'true':
+				case 'false':
+					return TYPE.BOOL;
+				case 'null':
+					return TYPE.NULL;
+			}
 			return TYPE.STR;
 		case 'number':
 			return TYPE.NUM;
+		case 'boolean':
+			return TYPE.BOOL;
 	}
-}
+};
 
 Value.prototype.get = function() {
 	return this.content;
@@ -47,7 +65,7 @@ Value.prototype.type = function() {
 
 var dealStr = function(str) {
 	return str.substring(1, str.length - 1);
-}
+};
 
 var dealNum = function(str) {
 	if (/[.]/.test(str)) {

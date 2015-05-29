@@ -3,20 +3,34 @@ var Value = require('./value');
 var TYPE = {
 	ID: 0,
 	STR: 1,
-	NUM: 2
+	NUM: 2,
+	BOOL: 3,
+	NULL: 4,
+	SYNTAX: 5,
 };
 
 exports.parse = function(str) {
-	var re = new RegExp('(^[A-Za-z_$][\\w\\s?-]+?$)|(^[\\"\\\'][\\w\\W]*[\\"\\\']$)|(^[0-9]+(\.[0-9]+)?$)');
+	if (str == '.') {
+		return new Value(TYPE.SYNTAX, str);
+	}
+
+	var re = new RegExp('(^[A-Za-z_$][\\w\\s?-]+?$)|(^[\\"\\\'][\\w\\W]*[\\"\\\']$)|(^[0-9]+(.[0-9]+)?$)');
 	var m = str.match(re);
 
 	if (!m) {
 		throw new Error('token not recognize [' + str + ']');
-		return;
 	}
 
 	if (m[1]) {
-		return new Value(TYPE.ID, m[0]);
+		switch (m[0]) {
+			case 'true':
+			case 'false':
+				return new Value(TYPE.BOOL, Boolean(m[0]));
+			case 'null':
+				return new Value(TYPE.NULL, null);
+			default:
+				return new Value(TYPE.ID, m[0]);
+		}
 	}
 
 	if (m[2]) {
@@ -25,7 +39,7 @@ exports.parse = function(str) {
 
 	if (m[3]) {
 		return new Value(TYPE.NUM, m[0]);
-	};
+	}
 };
 
 /*

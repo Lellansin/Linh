@@ -1,4 +1,8 @@
 exports.echo = function(params) {
-	console.log(params[0].get());
+	var values = [];
+	params.forEach(function(value) {
+		values.push(value.get());
+	})
+	console.log.apply(null, values);
 	return null;
 };

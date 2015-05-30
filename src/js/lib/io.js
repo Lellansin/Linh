@@ -3,6 +3,5 @@ exports.echo = function(params) {
 	params.forEach(function(value) {
 		values.push(value.get());
 	})
-	console.log.apply(null, values);
-	return null;
+	return console.log.apply(null, values);
 };

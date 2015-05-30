@@ -1,3 +1,9 @@
+exports.do = function(params) {
+	var func = params[1];
+	var args = [params[0]].concat(params.slice(2));
+	return func.call(args);
+};
+
 exports.if = function(params) {
 	var expression = params[0];
 	var iftrue = params[1];

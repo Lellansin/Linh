@@ -1,3 +1,4 @@
+var AST = require('./ast');
 var TYPE = require('./config/type');
 
 function Value(type, text) {
@@ -35,6 +36,10 @@ Value.prototype.init = function(type, text) {
 };
 
 Value.prototype.load = function(context) {
+	if (context.funcs.have(this.content)) {
+		this.type = TYPE.FUNC;
+		this.ast = new AST(context);
+	}
 	this.context = context;
 };
 
@@ -43,6 +48,12 @@ Value.prototype.get = function() {
 		return this.context.get(this.content);
 	}
 	return this.content;
+};
+
+Value.prototype.call = function(params) {
+	var values = [this].concat(params);
+	var expr = this.ast.parse(values).run();
+	return expr;
 };
 
 Value.prototype.type = function() {

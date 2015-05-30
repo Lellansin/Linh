@@ -1,3 +1,4 @@
+var TYPE = require('./config/type');
 var Expression = require('./expr');
 
 function AST(context) {
@@ -21,11 +22,11 @@ var parse = function(self, values) {
 
 	for (var i = 1; i < values.length; i++) {
 		var item = values[i];
-		if (item.type == 5) {
+		if (item.type == TYPE.SYNTAX_STOP) {
 			node.len++;
 			break;
 		}
-		if (!isFunc(self, item)) {
+		if (!isFunc(self, item) || node.name == 'do') {
 			node.add(item);
 		} else {
 			var son = parse(self, values.slice(i));
@@ -38,7 +39,7 @@ var parse = function(self, values) {
 }
 
 var isFunc = function(self, values) {
-	if (values.type == 0) {
+	if (values.type == TYPE.ID || values.type == TYPE.FUNC) {
 		// 是标识符
 		if (self.context.funcs.have(values.content)) {
 			return true;

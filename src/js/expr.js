@@ -22,7 +22,6 @@ module.exports = Expression;
 Expression.prototype.add = function(value) {
 	if (value.type == TYPE.ID) {
 		// 从上下文中得到标识符的值
-		// value = new Value(this.context.get(value.content));
 		value.load(this.context);
 	}
 	this.params.push(value);

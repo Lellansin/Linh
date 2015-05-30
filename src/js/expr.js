@@ -2,14 +2,16 @@
  * 表达式
  */
 
+var Value = require('./value');
+var property = require('./utils/define').property;
 var TYPE = require('./config/type');
 
 function Expression(context, value) {
-	this.context = context;
+	property(this, 'context', context);
+	property(this, 'isFunc', true);
+	property(this, 'len', 0);
 	this.name = value.content;
 	this.params = [];
-	this.isFunc = true;
-	this.len = 0;
 }
 
 module.exports = Expression;
@@ -20,7 +22,8 @@ module.exports = Expression;
 Expression.prototype.add = function(value) {
 	if (value.type == TYPE.ID) {
 		// 从上下文中得到标识符的值
-		value = this.context.get(value.content);
+		// value = new Value(this.context.get(value.content));
+		value.load(this.context);
 	}
 	this.params.push(value);
 	this.len++;
@@ -37,7 +40,10 @@ Expression.prototype.length = function() {
  * 执行表达式
  */
 Expression.prototype.run = function() {
-	return this.context.run(this.name, this.params);
+	if (this.params.length > 0) {
+		return this.context.run(this.name, this.params);
+	}
+	return this.context.get(this.name);
 };
 
 /*

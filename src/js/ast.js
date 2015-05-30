@@ -9,7 +9,7 @@ module.exports = AST;
 AST.prototype.parse = function(values) {
 	var self = this;
 
-	if (!isFunc(self, values[0])) {
+	if (!isFunc(self, values[0]) && values.length != 1) {
 		throw new Error('expr error, first item is not function');
 	}
 

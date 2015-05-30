@@ -32,9 +32,16 @@ Value.prototype.init = function(type, text) {
 			this.content = text;
 	}
 
-}
+};
+
+Value.prototype.load = function(context) {
+	this.context = context;
+};
 
 Value.prototype.get = function() {
+	if (this.type == TYPE.ID) {
+		return this.context.get(this.content);
+	}
 	return this.content;
 };
 

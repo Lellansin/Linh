@@ -16,17 +16,15 @@ var split = function(text) {
 	var result = [];
 	var strings = [];
 	var list = text.trim()
-		.replace(/\"[\w\W]*?\"/, function(match) {
+		.replace(/\"[\w\W]*?\"/g, function(match) {
 			strings.push(match);
 			return ' #str ';
 		})
+		.replace(/([.,])([^\d]|$)/g, ' $1 ')
 		.split(/[\ ]*,[\ ]*|[\ ]+/);
 	for (var i = 0; i < list.length; i++) {
 		var item = list[i];
-		if (item[item.length - 1] == '.') {
-			result.push(item.substr(0, item.length - 1));
-			result.push('.');
-		} else if (item == '#str') {
+		if (item == '#str') {
 			result.push(strings.shift());
 		} else if (item) {
 			result.push(item);
@@ -38,4 +36,6 @@ var split = function(text) {
 module.exports = token;
 
 // console.log('token()', token('add 12,8'));
+// console.log('token()', token('if gt num 5 echo "num > 5". echo "num <= 5"'));
+// console.log('token()', token('if gt i 20. echo "big!". else set j 10. echo "this is " j.'));
 // console.log(split('if gt 3 2. echo "hello world,3 > 2" "test"'));

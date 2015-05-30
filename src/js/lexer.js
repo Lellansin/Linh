@@ -6,7 +6,7 @@ exports.parse = function(str) {
 		return new Value(TYPE.SYNTAX, str);
 	}
 
-	var re = new RegExp('(^[A-Za-z_$][\\w\\s?-]+?$)|(^[\\"\\\'][\\w\\W]*[\\"\\\']$)|(^[0-9]+(.[0-9]+)?$)');
+	var re = new RegExp('(^[A-Za-z_$][\\w\\s?-]*?$)|(^[\\"\\\'][\\w\\W]*[\\"\\\']$)|(^[0-9]+(.[0-9]+)?$)');
 	var m = str.match(re);
 
 	if (!m) {

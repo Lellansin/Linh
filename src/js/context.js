@@ -14,8 +14,9 @@ module.exports = Context;
 Context.prototype.init = function() {
 	var self = this;
 	self.funcs.register('set', function(params) {
-		if (params.type == TYPE.STR) {
-			self.local[params[0].get()] = params[1].get();
+		var key = params[0].content;
+		if (key) {
+			self.local[key] = params[1].get();
 		}
 	});
 };

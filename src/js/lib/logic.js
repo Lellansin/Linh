@@ -11,31 +11,37 @@ exports.gt = function(params) {
 };
 
 exports.gte = function(params) {
-	var flag = true;
 	var num = params[0].get();
-	params.slice(1).forEach(function(value) {
-		if (num >= value.get())
+	var left = params.slice(1);
+
+	for (var i = 0; i < left.length; i++) {
+		var value = left[i].get();
+		if (num < value)
 			return false;
-	});
-	return flag;
+	}
+	return true;
 };
 
 exports.lt = function(params) {
-	var flag = true;
 	var num = params[0].get();
-	params.slice(1).forEach(function(value) {
-		if (num < value.get())
+	var left = params.slice(1);
+
+	for (var i = 0; i < left.length; i++) {
+		var value = left[i].get();
+		if (num >= value)
 			return false;
-	});
-	return flag;
+	}
+	return true;
 };
 
 exports.lte = function(params) {
-	var flag = true;
 	var num = params[0].get();
-	params.slice(1).forEach(function(value) {
-		if (num <= value.get())
+	var left = params.slice(1);
+
+	for (var i = 0; i < left.length; i++) {
+		var value = left[i].get();
+		if (num > value)
 			return false;
-	});
-	return flag;
+	}
+	return true;
 };

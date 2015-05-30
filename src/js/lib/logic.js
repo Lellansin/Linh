@@ -1,14 +1,16 @@
-exports['gt'] = function(params) {
-	var flag = true;
+exports.gt = function(params) {
 	var num = params[0].get();
-	params.slice(1).forEach(function(value) {
-		if (num > value.get())
+	var left = params.slice(1);
+
+	for (var i = 0; i < left.length; i++) {
+		var value = left[i].get();
+		if (num <= value)
 			return false;
-	});
-	return flag;
+	}
+	return true;
 };
 
-exports['gte'] = function(params) {
+exports.gte = function(params) {
 	var flag = true;
 	var num = params[0].get();
 	params.slice(1).forEach(function(value) {
@@ -18,7 +20,7 @@ exports['gte'] = function(params) {
 	return flag;
 };
 
-exports['lt'] = function(params) {
+exports.lt = function(params) {
 	var flag = true;
 	var num = params[0].get();
 	params.slice(1).forEach(function(value) {
@@ -28,7 +30,7 @@ exports['lt'] = function(params) {
 	return flag;
 };
 
-exports['lte'] = function(params) {
+exports.lte = function(params) {
 	var flag = true;
 	var num = params[0].get();
 	params.slice(1).forEach(function(value) {

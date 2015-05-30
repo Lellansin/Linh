@@ -2,8 +2,8 @@ var Value = require('./value');
 var TYPE = require('./config/type');
 
 exports.parse = function(str) {
-	if (str == '.') {
-		return new Value(TYPE.SYNTAX, str);
+	if (str == '.' || str == ',') {
+		return new Value(TYPE.SYNTAX_STOP, str);
 	}
 
 	var re = new RegExp('(^[A-Za-z_$][\\w\\s?-]*?$)|(^[\\"\\\'][\\w\\W]*[\\"\\\']$)|(^[0-9]+(.[0-9]+)?$)');

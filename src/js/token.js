@@ -20,8 +20,8 @@ var split = function(text) {
 			strings.push(match);
 			return ' #str ';
 		})
-		.replace(/([.,])([^\d]|$)/g, ' $1 ')
-		.split(/[\ ]*,[\ ]*|[\ ]+/);
+		.replace(/([.,])[^\d]?/g, ' $1 ')
+		.split(/[\ ]+/);
 	for (var i = 0; i < list.length; i++) {
 		var item = list[i];
 		if (item == '#str') {
@@ -36,6 +36,8 @@ var split = function(text) {
 module.exports = token;
 
 // console.log('token()', token('add 12,8'));
+// console.log('token()', token('if do 5 lt 3, echo "5 < 3", else echo "5 > 3"'));
+// console.log('token()', token('do 3 gt 5'));
 // console.log('token()', token('if gt num 5 echo "num > 5". echo "num <= 5"'));
 // console.log('token()', token('if gt i 20. echo "big!". else set j 10. echo "this is " j.'));
 // console.log(split('if gt 3 2. echo "hello world,3 > 2" "test"'));

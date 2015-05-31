@@ -10,12 +10,18 @@ var context = new Context(root);
 var AstTree = new AST(context);
 var flag = true;
 
-var line = function(code) {
+var run = function(code) {
 	var values = Token(code);
 	// console.log('values', values);
-	var expression = AstTree.parse(values);
-	// console.log('expression', expression);
-	var result = expression.run();
+	var list = AstTree.parse(values);
+	// console.log('list', util.inspect(list, false, 15));
+
+	for (var i = 0; i < list.length; i++) {
+		var expression = list[i];
+		// console.log('expression', util.inspect(expression, false, 15));
+		var result = expression.run();
+	}
+
 	printc(result);
 };
 
@@ -32,6 +38,7 @@ do {
 	// var code = 'set num 3'
 	// var code = 'do 3 gt 5'
 	// var code = 'if do 5 lt 3, echo "5 < 3", else echo "5 > 3"'
+	// var code = 'do echo "world", echo "hello"'
 	// flag = false;
 
 	if (code == 'exit') {
@@ -40,7 +47,10 @@ do {
 	}
 
 	try {
-		line(code);
+		run(code);
+		// run('set i 0');
+		// run('while lt i 5, do echo i, inc i.');
+		// run('while lt i 5, do echo i, inc i. echo "over"');
 	} catch (err) {
 		throw err
 		console.error('error:', err.message);

@@ -2,7 +2,7 @@ var TYPE = require('./config/type');
 var Funcs = require('./func');
 
 function Context(global) {
-	this.global = {};
+	this.global = global || {};
 	this.funcs = new Funcs();
 	this.local = {};
 
@@ -46,11 +46,23 @@ Context.prototype.set = function(name, value) {
  * 获取
  */
 Context.prototype.get = function(name) {
-	if (!!this.local[name]) {
+	if (this.local[name] !== undefined) {
 		return this.local[name];
 	} else {
 		return this.global[name];
 	}
+};
+
+/* 
+ * 获取
+ */
+Context.prototype.set = function(name, val) {
+	if (this.local[name] !== undefined) {
+		this.local[name] = val;
+	} else {
+		this.global[name] = val;
+	}
+	return undefined;
 };
 
 /*
@@ -58,4 +70,4 @@ Context.prototype.get = function(name) {
  */
 Context.prototype.run = function(name, params) {
 	return this.funcs.run(name, params);
-}
+};

@@ -1,5 +1,5 @@
 {
-  "name": "Linh.js",
+  "name": "LinhScript",
   "version": "0.0.2",
   "description": "script language",
   "main": "./lib/linh.js",

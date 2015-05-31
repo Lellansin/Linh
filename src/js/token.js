@@ -15,7 +15,12 @@ function token(text) {
 var split = function(text) {
 	var result = [];
 	var strings = [];
+	var arrays = [];
 	var list = text.trim()
+		.replace(/[^A-Za-z]\[[\w\W]*?\]/g, function(match) {
+			arrays.push(match);
+			return ' #arr ';
+		})
 		.replace(/\"[\w\W]*?\"/g, function(match) {
 			strings.push(match);
 			return ' #str ';
@@ -26,6 +31,8 @@ var split = function(text) {
 		var item = list[i];
 		if (item == '#str') {
 			result.push(strings.shift());
+		} else if (item == '#arr') {
+			result.push(arrays.shift().trim());
 		} else if (item) {
 			result.push(item);
 		}
@@ -35,6 +42,8 @@ var split = function(text) {
 
 module.exports = token;
 
+// console.log('token()', token('echo [1, 2, 3, 4]'));
+// console.log('token()', token('echo arr[0]'));
 // console.log('token()', token('add 12,8'));
 // console.log('token()', token('if do 5 lt 3, echo "5 < 3", else echo "5 > 3"'));
 // console.log('token()', token('do 3 gt 5'));

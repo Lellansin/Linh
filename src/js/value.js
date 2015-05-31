@@ -23,6 +23,9 @@ Value.prototype.init = function(type, text) {
 		case TYPE.NUM:
 			this.content = dealNum(text);
 			break;
+		case TYPE.ARR:
+			this.content = dealArray(text);
+			break;
 		case TYPE.BOOL:
 			this.content = Boolean(text);
 			break;
@@ -76,6 +79,9 @@ var getType = function(value) {
 			return TYPE.NUM;
 		case 'boolean':
 			return TYPE.BOOL;
+		case 'object':
+			// todo
+			return TYPE.ARR;
 	}
 };
 
@@ -88,4 +94,8 @@ var dealNum = function(str) {
 		return parseFloat(str);
 	}
 	return parseInt(str);
+};
+
+var dealArray = function(str) {
+	return JSON.parse(str);
 };

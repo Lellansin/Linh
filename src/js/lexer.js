@@ -6,12 +6,26 @@ exports.parse = function(str) {
 		return new Value(TYPE.SYNTAX_STOP, str);
 	}
 
-	var re = new RegExp('(^[A-Za-z_$][\\w\\s?-]*?$)|(^[\\"\\\'][\\w\\W]*[\\"\\\']$)|(^[0-9]+(.[0-9]+)?$)');
+	console.log('str [%s]', str);
+
+	if (str[0] == '[' && str[str.length - 1] == ']') {
+		// 递归处理好数组的每一个元素
+		return new Value(TYPE.ARR, str);
+	}
+
+	var re = new RegExp(
+		'(^[A-Za-z_$][\\w\\s?-]*?$)|' + // 标识符
+		'(^[\\"\\\'][\\w\\W]*[\\"\\\']$)|' + // 字符串
+		'(^[0-9]+(.[0-9]+)?$)|' + // 数字 （两个括号）
+		'(^[A-Za-z_$][\\w\\s?-\\d\\[\\]]*?$)'); // 数组
+
 	var m = str.match(re);
 
 	if (!m) {
 		throw new Error('token not recognize [' + str + ']');
 	}
+
+	console.log('m', m);
 
 	if (m[1]) {
 		switch (m[0]) {
@@ -32,10 +46,15 @@ exports.parse = function(str) {
 	if (m[3]) {
 		return new Value(TYPE.NUM, m[0]);
 	}
+
+	if (m[5]) {
+		return new Value(TYPE.ARR, m[0]);
+	}
 };
 
 
 // console.log('parse', exports.parse('i'));;
+// console.log('parse', exports.parse('arr[0]'));; // todo
 // console.log('parse', exports.parse('$i'));;
 // console.log('parse', exports.parse('name'));;
 // console.log('parse', exports.parse('"name"'));;
@@ -50,4 +69,3 @@ exports.parse = function(str) {
 // console.log('parse', exports.parse('123'));;
 // console.log('parse', exports.parse('1'));;
 // console.log('parse', exports.parse('12.3'));;
-

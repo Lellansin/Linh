@@ -1,9 +1,10 @@
 {
-	"ID": 0,
-	"STR": 10,
-	"NUM": 20,
-	"FUNC": 30,
-	"BOOL": 40,
-	"NULL": 50,
-	"SYNTAX_STOP": 60
+    "ID": 0,
+    "STR": 10,
+    "NUM": 20,
+    "ARR": 22,
+    "FUNC": 30,
+    "BOOL": 40,
+    "NULL": 50,
+    "SYNTAX_STOP": 60
 }

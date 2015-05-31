@@ -2,20 +2,26 @@ var Value = require('./value');
 var TYPE = require('./config/type');
 
 exports.parse = function(str) {
-	if (str == '.' || str == ',') {
-		return new Value(TYPE.SYNTAX_STOP, str);
+	// sentence pause
+	if (str == ',') {
+		return new Value(TYPE.SYNTAX_PAUSE, str);
+	}
+
+	// sentence end
+	if (str == '.') {
+		return new Value(TYPE.SYNTAX_END, str);
 	}
 
 	if (str[0] == '[' && str[str.length - 1] == ']') {
-		// 递归处理好数组的每一个元素
+		// todo recr every item
 		return new Value(TYPE.ARR, str);
 	}
 
 	var re = new RegExp(
-		'(^[A-Za-z_$][\\w\\s?-]*?$)|' + // 标识符
-		'(^[\\"\\\'][\\w\\W]*[\\"\\\']$)|' + // 字符串
-		'(^[0-9]+(.[0-9]+)?$)|' + // 数字 （两个括号）
-		'(^[A-Za-z_$][\\w\\s?-\\d\\[\\]]*?$)'); // 数组
+		'(^[A-Za-z_$][\\w\\s?-]*?$)|' + // identifier
+		'(^[\\"\\\'][\\w\\W]*[\\"\\\']$)|' + // string
+		'(^[0-9]+(.[0-9]+)?$)|' + // number (include float)
+		'(^[A-Za-z_$][\\w\\s?-\\d\\[\\]]*?$)'); // array
 
 	var m = str.match(re);
 
@@ -24,6 +30,7 @@ exports.parse = function(str) {
 		throw new Error(err);
 	}
 
+	// identifier
 	if (m[1]) {
 		switch (m[0]) {
 			case 'true':
@@ -36,14 +43,17 @@ exports.parse = function(str) {
 		}
 	}
 
+	// string
 	if (m[2]) {
 		return new Value(TYPE.STR, m[0]);
 	}
 
+	// number
 	if (m[3]) {
 		return new Value(TYPE.NUM, m[0]);
 	}
 
+	// array
 	if (m[5]) {
 		return new Value(TYPE.ARR, m[0]);
 	}

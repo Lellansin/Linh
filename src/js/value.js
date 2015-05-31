@@ -1,5 +1,6 @@
 var AST = require('./ast');
 var TYPE = require('./config/type');
+var property = require('./utils/define').property;
 
 function Value(type, text) {
 	this.init(type, text);
@@ -41,9 +42,9 @@ Value.prototype.init = function(type, text) {
 Value.prototype.load = function(context) {
 	if (context.funcs.have(this.content)) {
 		this.type = TYPE.FUNC;
-		this.ast = new AST(context);
+		property(this, 'ast', new AST(context));
 	}
-	this.context = context;
+	property(this, 'context', context);
 };
 
 Value.prototype.get = function() {
@@ -51,6 +52,13 @@ Value.prototype.get = function() {
 		return this.context.get(this.content);
 	}
 	return this.content;
+};
+
+Value.prototype.set = function(val) {
+	if (this.type == TYPE.ID) {
+		return this.context.set(this.content, val);
+	}
+	return this.content = val;
 };
 
 Value.prototype.call = function(params) {

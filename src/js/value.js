@@ -11,12 +11,12 @@ module.exports = Value;
 Value.prototype.init = function(type, text) {
 	if (!text) {
 		var value = type;
-		this.type = getType(value);
+		property(this, 'type', getType(value));
 		this.content = value;
 		return;
 	}
 
-	this.type = type;
+	property(this, 'type', type);
 	switch (type) {
 		case TYPE.STR:
 			this.content = dealStr(text);

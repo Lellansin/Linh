@@ -1,13 +1,13 @@
 {
   "name": "linh",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A script language",
   "main": "./lib/linh.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "psp": "./bin/linh"
+    "linh": "./bin/linh"
   },
   "author": "Lellansin",
   "license": "MIT",

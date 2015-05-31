@@ -1,6 +1,6 @@
 {
   "name": "Linh.js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "script language",
   "main": "./lib/linh.js",
   "scripts": {
@@ -15,5 +15,21 @@
   "devDependencies": {
     "mocha": "^2.2.5",
     "should": "^6.0.3"
-  }
+  },
+  "directories": {
+    "example": "examples",
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Lellansin/Linh.git"
+  },
+  "keywords": [
+    "script",
+    "language"
+  ],
+  "bugs": {
+    "url": "https://github.com/Lellansin/Linh/issues"
+  },
+  "homepage": "https://github.com/Lellansin/Linh"
 }

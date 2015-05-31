@@ -6,8 +6,6 @@ exports.parse = function(str) {
 		return new Value(TYPE.SYNTAX_STOP, str);
 	}
 
-	console.log('str [%s]', str);
-
 	if (str[0] == '[' && str[str.length - 1] == ']') {
 		// 递归处理好数组的每一个元素
 		return new Value(TYPE.ARR, str);
@@ -22,10 +20,9 @@ exports.parse = function(str) {
 	var m = str.match(re);
 
 	if (!m) {
-		throw new Error('token not recognize [' + str + ']');
+		var err = 'token not recognize \"' + str + '\"';
+		throw new Error(err);
 	}
-
-	console.log('m', m);
 
 	if (m[1]) {
 		switch (m[0]) {

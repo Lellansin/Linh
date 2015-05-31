@@ -1,4 +1,4 @@
-# Linh
+# Linh Script
 
 *A language for my life.*
 

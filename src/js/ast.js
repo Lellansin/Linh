@@ -14,7 +14,22 @@ AST.prototype.parse = function(values) {
 		throw new Error('expr error, first item is not function');
 	}
 
-	return parse(self, values);
+	var list = [],
+		length = values.length;
+
+	for (var i = 0, cur = 0; i < length; i++) {
+		var item = values[i];
+		if (item.type == TYPE.SYNTAX_END) {
+			list.push(parse(self, values.slice(cur, i)));
+			cur = i + 1;
+		}
+	}
+
+	if (cur < (length - 1)) {
+		list.push(parse(self, values.slice(cur, i)));
+	}
+
+	return list;
 };
 
 var parse = function(self, values) {
@@ -22,8 +37,11 @@ var parse = function(self, values) {
 
 	for (var i = 1; i < values.length; i++) {
 		var item = values[i];
-		if (item.type == TYPE.SYNTAX_STOP) {
+		if (item.type == TYPE.SYNTAX_PAUSE) {
 			node.len++;
+			break;
+		}
+		if (item.type == TYPE.SYNTAX_END) {
 			break;
 		}
 		if (!isFunc(self, item)) {
@@ -36,7 +54,7 @@ var parse = function(self, values) {
 	};
 
 	return node;
-}
+};
 
 var isFunc = function(self, values) {
 	if (values.type == TYPE.ID || values.type == TYPE.FUNC) {

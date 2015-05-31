@@ -26,7 +26,7 @@ var parse = function(self, values) {
 			node.len++;
 			break;
 		}
-		if (!isFunc(self, item) || node.name == 'do') {
+		if (!isFunc(self, item)) {
 			node.add(item);
 		} else {
 			var son = parse(self, values.slice(i));

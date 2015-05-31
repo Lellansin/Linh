@@ -2,9 +2,11 @@
     "ID": 0,
     "STR": 10,
     "NUM": 20,
-    "ARR": 22,
-    "FUNC": 30,
-    "BOOL": 40,
-    "NULL": 50,
-    "SYNTAX_STOP": 60
+    "ARR": 30,
+    "FUNC": 40,
+    "BOOL": 50,
+    "NULL": 60,
+    "SYNTAX_STOP": 70,
+    "SYNTAX_PAUSE": 80,
+    "SYNTAX_END": 90
 }

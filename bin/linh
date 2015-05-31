@@ -1,0 +1,51 @@
+#!/usr/bin/env node
+
+var fs = require('fs'),
+  program = require('commander'),
+  version = require('../package.json').version,
+  linh = require('../'),
+  flag = true;
+
+program
+  .version(version)
+  .action(function(cmd, env) {
+    flag = false;
+
+    var args = Array.prototype.slice.call(arguments);
+    var env = args.pop();
+    var filename = args.shift();
+    var code = fs.readFileSync(filename).toString();
+    
+    linh(code, args);
+  });
+
+program.parse(process.argv);
+
+if (flag) {
+  repl();
+}
+
+function repl() {
+  var util = require('util');
+  var printc = require('../lib/utils/printc');
+  var scanf = require('scanf');
+
+  do {
+    process.stdout.write('> ');
+    var code = scanf('%S');
+
+    if (code == 'exit') {
+      console.log('bye~');
+      process.exit();
+    }
+
+    try {
+      var r = linh(code);
+      printc(r);
+    } catch (err) {
+      throw err
+      console.error('error:', err.message);
+    }
+
+  } while (true);
+}

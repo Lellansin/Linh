@@ -12,10 +12,11 @@ var run = require('../lib/linh');
 // var code = 'if do 5 lt 3, echo "5 < 3", else echo "5 > 3"'
 // var code = 'do echo "world", echo "hello"'
 
-// run('set i 10');
-// run('i');
-// run('while lt i 5, do echo i, inc i.');
-// run('while lt i 5, do echo i, inc i. echo "over"');
+// var code = 'set i 10';
+// var code = 'i';
+// var code = 'while lt i 5, do echo i, inc i.';
+// var code = 'while lt i 5, do echo i, inc i. echo "over"';
 
-run('set i 0');
-run('while lt i 5, do echo i, inc i.');
+var code = 'set i 0. while lt i 5, do echo i, inc i.';
+
+console.log(run(code));

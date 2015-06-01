@@ -1,0 +1,8 @@
+{
+    "END": 0,
+    "COMMA": 1,
+    "QUESTION": 2,
+    "EXCLAMATION": 3,
+    "COLON": 4,
+    "SEMICOLON": 5
+}

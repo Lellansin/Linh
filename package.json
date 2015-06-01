@@ -1,6 +1,6 @@
 {
   "name": "linh",
-  "version": "0.0.5",
+  "version": "0.0.8",
   "description": "A script language",
   "main": "./lib/linh.js",
   "scripts": {

@@ -6,7 +6,7 @@
     "FUNC": 40,
     "BOOL": 50,
     "NULL": 60,
-    "SYNTAX_STOP": 70,
-    "SYNTAX_PAUSE": 80,
-    "SYNTAX_END": 90
+    "SYNTAX_END": 80,
+    "SYNTAX_PAUSE": 70,
+    "SYNTAX_STOP": 90
 }

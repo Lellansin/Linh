@@ -1,6 +1,6 @@
 set i 10.
 
-echo "i is " i.
+echo "i is" i.
 
 if gt i 5, do
     echo "i > 5",

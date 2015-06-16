@@ -215,6 +215,7 @@ describe('linh', function() {
 
             var list = AstTree.parse(values);
 
+
             checkTree(list, [{
                 name: 'set',
                 isFunc: true,
